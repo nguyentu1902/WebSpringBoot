@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="span4">
 			<h1>
-				<a class="logo" href="index.html"><span>Twitter Bootstrap
+				<a class="logo" href="http://localhost:8081/DiamonShop/trang-chu/"><span>Twitter Bootstrap
 						ecommerce template</span> <img
 					src="<c:url value="/assets/user/img/logo-bootstrap-shoping-cart.png"></c:url>"
 					alt="bootstrap sexy shop"> </a>
@@ -15,8 +15,7 @@
 		<div class="span4">
 			<div class="offerNoteWrapper">
 				<h1 class="dotmark">
-					<i class="icon-cut"></i> Twitter Bootstrap shopping cart HTML
-					template is available @ $14
+					<i class="icon-cut"></i> Diamon Shop
 				</h1>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 package DiamonShop.DAO;
 
 import java.lang.invoke.ConstantCallSite;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -69,6 +70,50 @@ public class ProductsDAO extends BaseDAO{
 		
 		List<ProductsDTO> lstProductsDTO = _jdbcTemplate.query(sql, new ProductsDTOMapper());
 		return lstProductsDTO;
+	}
+	
+	private StringBuffer SqlProductsByID(int id) {
+		StringBuffer sql = SqlString();
+		sql.append("WHERE 1 = 1 ");
+		sql.append("AND id_category = " + id + " ");
+		return sql;
+	}
+	
+	private String SqlProductsPaginate(int id, int start, int totalPage) {
+		StringBuffer sql = SqlString();
+		sql.append("LIMIT " + start + ", "+ totalPage);
+		return sql.toString();
+	}
+	
+	public List<ProductsDTO> GetAllProductsByID(int id) {
+		String sql = SqlProductsByID(id).toString();
+		List<ProductsDTO> listProducts = _jdbcTemplate.query(sql, new ProductsDTOMapper());
+		return listProducts;
+	}
+	
+	public List<ProductsDTO> GetDataProductsPaginate(int id, int start, int totalPage) {
+		StringBuffer sqlGetDataByID = SqlProductsByID(id);
+		List<ProductsDTO> listProductsByID = _jdbcTemplate.query(sqlGetDataByID.toString(), new ProductsDTOMapper());
+		List<ProductsDTO> listProducts = new ArrayList<ProductsDTO>();
+		if(listProductsByID.size() > 0) {
+			String sql = SqlProductsPaginate(id, start, totalPage);
+			listProducts = _jdbcTemplate.query(sql, new ProductsDTOMapper());
+		}
+		return listProducts;
+	}
+
+	private String SqlProductByID(long id) {
+		StringBuffer sql = SqlString();
+		sql.append("WHERE 1 = 1 ");
+		sql.append("AND p.id = " + id + " ");
+		sql.append("LIMIT 1 ");
+		return sql.toString();
+	}
+	
+	public List<ProductsDTO> GetProductByID(long id) {
+		String sql = SqlProductByID(id);
+		List<ProductsDTO> listProduct = _jdbcTemplate.query(sql, new ProductsDTOMapper());
+		return listProduct;
 	}
 	
 }
