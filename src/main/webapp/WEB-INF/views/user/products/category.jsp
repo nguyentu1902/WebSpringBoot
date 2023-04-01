@@ -55,7 +55,7 @@
 									<a href="product_details.html" class="overlay"></a> <a
 										class="zoomTool" href="product_details.html" title="add to cart"><span
 										class="icon-search"></span> Xem chi tiết</a> <a
-										href="product_details.html"><img
+										href="<c:url value="/chi-tiet-san-pham/${ item.id_product }" />"><img
 										src="<c:url value="/assets/user/img/${ item.img }" />"
 										alt=""></a>
 									<div class="caption cntr">
@@ -89,7 +89,7 @@
 		
 		</div>
 	<div class="pagination">
-		<c:forEach var="item" begin = "${ paginateInfo.start }" end = "${ paginateInfo.end }" varStatus="loop">
+		<c:forEach var="item" begin = "1" end = "${ paginateInfo.totalPage }" varStatus="loop">
 			<c:if test="${ loop.index == paginateInfo.currentPage }">
 				<a href="<c:url value="/san-pham/${ idCategory }/${ loop.index }"/>" class="active">${ loop.index }</a>
 			</c:if>

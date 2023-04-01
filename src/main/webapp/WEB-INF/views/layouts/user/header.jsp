@@ -21,7 +21,7 @@
 		</div>
 		<div class="span4 alignR">
 			<p>
-				<br> <strong> Support (24/7) : 0800 1234 678 </strong><br>
+				<br> <strong> Support (24/7) : Q3T@gmail.com </strong><br>
 				<br>
 			</p>
 			<span class="btn btn-mini">[ 2 ] <span

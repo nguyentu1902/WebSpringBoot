@@ -11,7 +11,6 @@ public class HomeController extends BaseController{
 	@RequestMapping(value = {"/", "/trang-chu"}, method = RequestMethod.GET)
 	public ModelAndView Index()
 	{
-		//ModelAndView mv = new ModelAndView("user/index");
 		
 		_mvShare.addObject("slides", _homeService.GetDataSlide());
 		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
@@ -23,6 +22,3 @@ public class HomeController extends BaseController{
 	}
 
 }
-
-
-//ngocthao

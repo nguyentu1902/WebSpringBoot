@@ -24,6 +24,7 @@ public class CategoryController extends BaseController{
 	@RequestMapping(value = "/san-pham/{id}")
 	public ModelAndView Product(@PathVariable String id) {
 		_mvShare.setViewName("user/products/category");
+		
 		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
 		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalProductsPage, 1);
 		_mvShare.addObject("idCategory", id);
@@ -32,15 +33,15 @@ public class CategoryController extends BaseController{
 		return _mvShare;
 	}
 	
-//	@RequestMapping(value = "/san-pham/{id}/{currentPage}")
-//	public ModelAndView Product(@PathVariable String id, @PathVariable String currentPage) {
-//		_mvShare.setViewName("user/products/category");
-//		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
-//		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalProductsPage, Integer.parseInt(currentPage));
-//		_mvShare.addObject("idCategory", id);
-//		_mvShare.addObject("paginateInfo", paginateInfo);
-//		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id) ,paginateInfo.getStart(), totalProductsPage));
-//		return _mvShare;
-//	}
+	@RequestMapping(value = "/san-pham/{id}/{currentPage}")
+	public ModelAndView Product(@PathVariable String id, @PathVariable String currentPage) {
+		_mvShare.setViewName("user/products/category");
+		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalProductsPage, Integer.parseInt(currentPage));
+		_mvShare.addObject("idCategory", id);
+		_mvShare.addObject("paginateInfo", paginateInfo);
+		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id) ,paginateInfo.getStart(), totalProductsPage));
+		return _mvShare;
+	}
 
 }
