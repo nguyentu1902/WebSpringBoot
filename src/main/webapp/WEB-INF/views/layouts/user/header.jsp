@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="span4">
 			<h1>
-				<a class="logo" href="http://localhost:8081/DiamonShop/trang-chu/"><span>Twitter Bootstrap
+				<a class="logo" href="http://localhost:8081/DiamonShop/"><span>Twitter Bootstrap
 						ecommerce template</span> <img
 					src="<c:url value="/assets/user/img/logo-bootstrap-shoping-cart.png"></c:url>"
 					alt="bootstrap sexy shop"> </a>
@@ -24,7 +24,7 @@
 				<br> <strong> Support (24/7) : Q3T@gmail.com </strong><br>
 				<br>
 			</p>
-			<span class="btn btn-mini">[ 2 ] <span
+			<span class="btn btn-mini">[ ${ TotalQuantyCart } ]<span
 				class="icon-shopping-cart"></span></span> <span
 				class="btn btn-warning btn-mini">$</span> <span class="btn btn-mini">&pound;</span>
 			<span class="btn btn-mini">&euro;</span>

@@ -138,7 +138,7 @@ Body Section
 						<h3>${ product.name }</h3>
 						<hr class="soft" />
 
-						<form class="form-horizontal qtyFrm">
+						<form class="form-horizontal qtyFrm" method="get" action="<c:url value="/AddCart/${ product.id_product }"/>">
 							<div class="control-group">
 								<label class="control-label">
 								<span><strong> <fmt:formatNumber type = "number" groupingUsed = "true" value = "${ product.price }" />₫</strong></span>
