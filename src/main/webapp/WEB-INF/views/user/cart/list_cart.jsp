@@ -65,7 +65,7 @@
 				<br />
 
 				<a href="http://localhost:8081/DiamonShop/" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Trang Chủ </a> 
-				<a href="login.html" class="shopBtn btn-large pull-right"> Thanh Toán <span class="icon-arrow-right"></span></a>
+				<a href="<c:url value="/checkout"/>" class="shopBtn btn-large pull-right"> Thanh Toán <span class="icon-arrow-right"></span></a>
 
 			</div>
 		</div>
